@@ -6,28 +6,47 @@ public class BoardMain {
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in); 
+		Scanner sc = new Scanner(System.in); 		
 		
-		// 입력 출력
-		System.out.println("출력");
-		
-		// 입력 -> 입력이 완료(엔터, 줄바꿈)될 때까지 대기
-		String str1 = sc.nextLine();		
-		// 여러번 입력
-		String str2 = sc.nextLine();
-		
-		System.out.println("입력 완료");
-		System.out.println("입력값1 : " + str1);
-		System.out.println("입력값2 : " + str2);
-		
-		int num1 = Integer.parseInt(sc.nextLine());
-		int num2 = Integer.parseInt(sc.nextLine());
+		while(true) {
+			System.out.print("명령어 : ");
+			String command = sc.nextLine();
+			
+			command.trim();
+			
+			if(command.length() == 0) {
+				continue;
+			}
+			
+			if(command.equals("list")) {
+				System.out.println("게시물 목록");
+			}
+			
+			else if(command.equals("write")) {
 				
-		System.out.println(num1 + num2);
-		
+				// 번호, 제목, 내용
+				
+				int id = 1;
+				
+				System.out.printf("제목 : ");
+				String title = sc.nextLine();
+				
+				System.out.printf("내용 : ");
+				String body = sc.nextLine();
+				
+				System.out.printf("게시물 등록이 완료되었습니다.\n");
+				
+			} else {
+				System.out.printf("%s는 존재하지 않는 명령어입니다.\n", command);
+			}
+			
+			
+		}
 		
 		
 	}
 
 }
+
+
 
