@@ -15,12 +15,10 @@ public class BoardMain {
 		String str1 = sc.nextLine();		
 		// 여러번 입력
 		String str2 = sc.nextLine();
-		String str3 = sc.nextLine();
 		
 		System.out.println("입력 완료");
 		System.out.println("입력값1 : " + str1);
 		System.out.println("입력값2 : " + str2);
-		System.out.println("입력값3 : " + str3);
 		
 		int num1 = Integer.parseInt(sc.nextLine());
 		int num2 = Integer.parseInt(sc.nextLine());
