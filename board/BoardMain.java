@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import board.util.Util;
+
 public class BoardMain {
 
 	public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class BoardMain {
 				System.out.printf("=== 게시물 목록 ===\n");
 				for(int i = 0; i < articles.size(); i++) {
 					Article currentArticle = articles.get(i);
-					System.out.printf("%d   | %s\n", currentArticle.id, currentArticle.title);					
+					System.out.printf("%d  | %s | %s\n", currentArticle.id, currentArticle.regDate, currentArticle.title);					
 				}
 			}
 			
@@ -40,8 +42,9 @@ public class BoardMain {
 				System.out.printf("내용 : ");
 				String body = sc.nextLine();
 				
-				Article article = new Article(id, title, body);
+				String currentDate = Util.getCurrentDate();				
 				
+				Article article = new Article(id, title, body, currentDate);				
 				articles.add(article);
 				
 				System.out.printf("게시물 등록이 완료되었습니다.\n");
@@ -70,6 +73,8 @@ public class BoardMain {
 				System.out.printf("번호 : %d\n", targetArticle.id );
 				System.out.printf("제목 : %s\n", targetArticle.title);
 				System.out.printf("내용 : %s\n", targetArticle.body);
+				System.out.printf("작성일 : %s\n", targetArticle.regDate);
+				
 				
 			} else if(command.startsWith("delete ")) {
 				
